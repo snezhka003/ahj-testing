@@ -9,9 +9,6 @@
     "test": "jest --coverage",
     "lint": "eslint ."
   },
-  "jest": {
-    "testEnvironment": "jsdom"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/snezhka003/ahj-DOM"
