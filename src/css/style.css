@@ -68,6 +68,10 @@ html, body {
   background-image: url(../img/discover.png);
 }
 
+.dinersclub {
+  background-image: url(../img/dinersclub.png);
+}
+
 .active {
   opacity: 1;
 }

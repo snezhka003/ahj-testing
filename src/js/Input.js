@@ -24,20 +24,23 @@ export default class Input {
 
   identify(code) {
     this.name = 'identify';
-    if (code === '2') {
-      return 'mir';
-    } if (code === '31' || code === '35') {
-      return 'jsb';
-    } if (code === '34' || code === '37') {
+    if (code.startsWith('37') || code.startsWith('34')) {
       return 'amex';
-    } if (code === '4') {
+    } if (code.startsWith('31') || code.startsWith('35')) {
+      return 'jsb';
+    } if (code.startsWith('22')) {
+      return 'mir';
+    } if (code.startsWith('4')) {
       return 'visa';
-    } if (code === '50' || code === '56' || code === '57' || code === '58' || code === '63' || code === '67') {
+    } if (code.startsWith('50')
+      || code.startsWith('56') || code.startsWith('57') || code.startsWith('58') || code.startsWith('63') || code.startsWith('67')) {
       return 'maestro';
-    } if (code === '51' || code === '52' || code === '53' || code === '54' || code === '55') {
+    } if (code.startsWith('51') || code.startsWith('52') || code.startsWith('53') || code.startsWith('54') || code.startsWith('55')) {
       return 'master';
-    } if (code === '60') {
+    } if (code.startsWith('60')) {
       return 'discover';
+    } if (code.startsWith('30') || code.startsWith('36') || code.startsWith('38')) {
+      return 'dinersclub';
     }
     return false;
   }
