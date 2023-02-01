@@ -47,6 +47,9 @@ export default class Input {
 
   changeClass(nameClass) {
     this.cards.forEach((item) => {
+      if (this.input.value === null) {
+        item.classList.remove('active');
+      }
       if (item.classList.contains(`${nameClass}`)) {
         item.classList.add('active');
       } else {

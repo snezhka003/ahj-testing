@@ -10,18 +10,15 @@ export default class Valid {
   }
 
   getArr(str) {
-    this.name = 'getArr';
     const arr = str.split('');
     return arr;
   }
 
   reverseStr(arr) {
-    this.name = 'reverseStr';
     return arr.reverse();
   }
 
   separat(arr) {
-    this.name = 'separat';
     const oddArr = [];
     const evenArr = [];
     let item;
@@ -45,7 +42,6 @@ export default class Valid {
   }
 
   check(arr) {
-    this.name = 'check';
     const oddItemArr = [];
 
     arr.forEach((el) => {
@@ -62,7 +58,6 @@ export default class Valid {
   }
 
   getSumArr(arr) {
-    this.name = 'getSumArr';
     let sum = 0;
     arr.forEach((el) => {
       const item = Number(el);
@@ -73,17 +68,17 @@ export default class Valid {
 
   checkValid(sum) {
     const arrOrigin = this.getArr(this.str);
-    const check = Number(arrOrigin[arrOrigin.length - 1]);
+    const checking = Number(arrOrigin[arrOrigin.length - 1]);
 
-    if ((sum + check) % 10 === 0) {
+    if ((sum + checking) % 10 === 0) {
       return true;
     }
     return false;
   }
 
   start() {
-    const cutStr = this.cutStr();
-    const arrStr = this.getArr(cutStr);
+    const cutString = this.cutStr();
+    const arrStr = this.getArr(cutString);
     const revArr = this.reverseStr(arrStr);
     const { oddArr, evenArr } = this.separat(revArr);
     const oddItemArr = this.check(oddArr);
