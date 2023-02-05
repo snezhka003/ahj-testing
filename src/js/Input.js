@@ -16,6 +16,11 @@ export default class Input {
 
   inpHandler() {
     const { value } = this.input;
+    if (!value.value) {
+      this.cards.forEach((item) => {
+        item.classList.remove('active');
+      });
+    }
     const ident = this.identify(value);
     if (ident) {
       this.changeClass(ident);
@@ -47,9 +52,6 @@ export default class Input {
 
   changeClass(nameClass) {
     this.cards.forEach((item) => {
-      if (this.input.value === null) {
-        item.classList.remove('active');
-      }
       if (item.classList.contains(`${nameClass}`)) {
         item.classList.add('active');
       } else {

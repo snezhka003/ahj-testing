@@ -1,4 +1,7 @@
 import Valid from '../Valid';
+import {
+  cutStr, getArr, separat, check, getSumArr,
+} from '../Utils';
 
 test('should create a new object class Valid', () => {
   const expected = {
@@ -12,8 +15,7 @@ test('should create a new object class Valid', () => {
 test('should cut str', () => {
   const expected = '12';
 
-  const valid = new Valid('123');
-  const result = valid.cutStr();
+  const result = cutStr('123');
 
   expect(result).toEqual(expected);
 });
@@ -21,16 +23,7 @@ test('should cut str', () => {
 test('should return arr', () => {
   const expected = ['1', '2', '3'];
 
-  const valid = new Valid('123');
-  const result = valid.getArr('123');
-  expect(result).toEqual(expected);
-});
-
-test('should return reverse arr', () => {
-  const expected = ['3', '2', '1'];
-
-  const valid = new Valid('123');
-  const result = valid.reverseStr(['1', '2', '3']);
+  const result = getArr('123');
   expect(result).toEqual(expected);
 });
 
@@ -40,24 +33,21 @@ test('arrays should be divided into even and odd elements', () => {
     evenArr: ['2', '4'],
   };
 
-  const valid = new Valid('1234');
-  const result = valid.separat(['1', '2', '3', '4']);
+  const result = separat(['1', '2', '3', '4']);
   expect(result).toEqual(expected);
 });
 
 test('const return arr with el < 9', () => {
   const expected = [3, 4, 1, 8];
 
-  const valid = new Valid('1234');
-  const result = valid.check(['6', '2', '5', '4']);
+  const result = check(['6', '2', '5', '4']);
   expect(result).toEqual(expected);
 });
 
 test('should return summ el', () => {
   const expected = 10;
 
-  const valid = new Valid('1234');
-  const result = valid.getSumArr(['1', '2', '3', '4']);
+  const result = getSumArr(['1', '2', '3', '4']);
 
   expect(result).toEqual(expected);
 });
